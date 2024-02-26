@@ -3,9 +3,7 @@ rodada = 1
 indice = 0
 pes_em = amarelinha[indice]
 
-
 def print_local(local):
-
   if pes_em == [0]:
     print("Você está no início da amarelinha")
   elif pes_em == [10]:
@@ -18,7 +16,6 @@ def print_local(local):
 
 
 while rodada < 10:
-
   pedra_em = rodada
   print("A pedra foi jogada na casa ", pedra_em)
 
