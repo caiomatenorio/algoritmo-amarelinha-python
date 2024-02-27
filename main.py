@@ -1,7 +1,8 @@
-amarelinha = ([0], [1], [2], [3, 4], [5], [6], [7, 8], [9], [10])
+amarelinha = [[0], [1], [2], [3, 4], [5], [6], [7, 8], [9], [10]]
 rodada = 1
 indice = 0
-pes_em = amarelinha[indice]
+pes_em = amarelinha[indice].copy()
+
 
 def print_local(local):
   if pes_em == [0]:
@@ -24,14 +25,14 @@ while rodada < 10:
     if pedra_em in amarelinha[indice + 1]:
       if len(amarelinha[indice + 1]) == 2:
         indice += 1
-        pes_em = amarelinha[indice]
+        pes_em = amarelinha[indice].copy()
         pes_em.pop(pes_em.index(pedra_em))
       else:
         indice += 2
-        pes_em = amarelinha[indice]
+        pes_em = amarelinha[indice].copy()
     else:
       indice += 1
-      pes_em = amarelinha[indice]
+      pes_em = amarelinha[indice].copy()
 
   while pes_em != [0]:
     print_local(pes_em)
@@ -39,14 +40,14 @@ while rodada < 10:
       print("Você pegou a pedra")
       if len(amarelinha[indice - 1]) == 2:
         indice -= 1
-        pes_em = amarelinha[indice]
+        pes_em = amarelinha[indice].copy()
         pes_em.pop(pes_em.index(pedra_em))
       else:
         indice -= 2
-        pes_em = amarelinha[indice]
+        pes_em = amarelinha[indice].copy()
     else:
       indice -= 1
-      pes_em = amarelinha[indice]
+      pes_em = amarelinha[indice].copy()
 
   rodada += 1
   print()
